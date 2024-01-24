@@ -14,11 +14,12 @@
 		384FBF4F2B5E27DC00284802 /* triviaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF4E2B5E27DC00284802 /* triviaAppTests.swift */; };
 		384FBF592B5E27DC00284802 /* triviaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF582B5E27DC00284802 /* triviaAppUITests.swift */; };
 		384FBF5B2B5E27DC00284802 /* triviaAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF5A2B5E27DC00284802 /* triviaAppUITestsLaunchTests.swift */; };
-		384FBF692B5E30E000284802 /* ApiModle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF682B5E30E000284802 /* ApiModle.swift */; };
+		384FBF692B5E30E000284802 /* TrueOrFalseModle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF682B5E30E000284802 /* TrueOrFalseModle.swift */; };
 		384FBF6F2B5E32BA00284802 /* listOfSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF6E2B5E32BA00284802 /* listOfSelection.swift */; };
 		384FBF712B5E375E00284802 /* RoundedGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF702B5E375E00284802 /* RoundedGradientButton.swift */; };
 		384FBF732B5F6DE500284802 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF722B5F6DE500284802 /* SaveButton.swift */; };
 		384FBF752B5F847800284802 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF742B5F847800284802 /* Networking.swift */; };
+		384FBF792B60AA2D00284802 /* MockTrueorFalse.json in Resources */ = {isa = PBXBuildFile; fileRef = 384FBF782B60AA2D00284802 /* MockTrueorFalse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +50,12 @@
 		384FBF542B5E27DC00284802 /* triviaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = triviaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		384FBF582B5E27DC00284802 /* triviaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = triviaAppUITests.swift; sourceTree = "<group>"; };
 		384FBF5A2B5E27DC00284802 /* triviaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = triviaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		384FBF682B5E30E000284802 /* ApiModle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModle.swift; sourceTree = "<group>"; };
+		384FBF682B5E30E000284802 /* TrueOrFalseModle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueOrFalseModle.swift; sourceTree = "<group>"; };
 		384FBF6E2B5E32BA00284802 /* listOfSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listOfSelection.swift; sourceTree = "<group>"; };
 		384FBF702B5E375E00284802 /* RoundedGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedGradientButton.swift; sourceTree = "<group>"; };
 		384FBF722B5F6DE500284802 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		384FBF742B5F847800284802 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		384FBF782B60AA2D00284802 /* MockTrueorFalse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockTrueorFalse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,9 +144,10 @@
 		384FBF672B5E30A600284802 /* Modle */ = {
 			isa = PBXGroup;
 			children = (
-				384FBF682B5E30E000284802 /* ApiModle.swift */,
+				384FBF682B5E30E000284802 /* TrueOrFalseModle.swift */,
 				384FBF702B5E375E00284802 /* RoundedGradientButton.swift */,
 				384FBF722B5F6DE500284802 /* SaveButton.swift */,
+				384FBF782B60AA2D00284802 /* MockTrueorFalse.json */,
 			);
 			path = Modle;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384FBF792B60AA2D00284802 /* MockTrueorFalse.json in Resources */,
 				384FBF452B5E27DC00284802 /* Preview Assets.xcassets in Resources */,
 				384FBF422B5E27DC00284802 /* Assets.xcassets in Resources */,
 			);
@@ -301,7 +305,7 @@
 				384FBF712B5E375E00284802 /* RoundedGradientButton.swift in Sources */,
 				384FBF402B5E27D900284802 /* ContentView.swift in Sources */,
 				384FBF3E2B5E27D900284802 /* triviaAppApp.swift in Sources */,
-				384FBF692B5E30E000284802 /* ApiModle.swift in Sources */,
+				384FBF692B5E30E000284802 /* TrueOrFalseModle.swift in Sources */,
 				384FBF752B5F847800284802 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
