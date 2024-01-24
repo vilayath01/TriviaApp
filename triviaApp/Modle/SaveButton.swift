@@ -1,9 +1,3 @@
-//
-//  SaveButton.swift
-//  triviaApp
-//
-//  Created by vila on 23/1/2024.
-//
 
 import SwiftUI
 

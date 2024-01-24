@@ -1,9 +1,3 @@
-//
-//  Button.swift
-//  triviaApp
-//
-//  Created by vila on 22/1/2024.
-//
 
 import SwiftUI
 
@@ -46,8 +40,3 @@ struct RoundedGradientButton: View {
     
     RoundedGradientButton(buttonText: .constant("tap me"), categories: ["Vila", "Junnu"], labelText: "Select Category:")
 }
-
-
-
-
-
