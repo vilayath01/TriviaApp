@@ -3,48 +3,31 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    @State var cancellable: Set<AnyCancellable> = []
-    let networkingManager = NetworkingManager()
-    @State var selectedButtonText1: String = "Tap to choose"
-    @State var selectedButtonText2: String = "Tap to choose"
-    @State var selectedButtonText3: String = "Tap to choose"
-    @State var selectedButtonText4: String = "Tap to choose"
     
+    var categoriesList = CategoriesList()
+    let networkingManager = NetworkingManager()
+    @State var selectedAmt: String = "Tap to Choose"
+    @State var selectedCatego: String = "Tap to Choose"
+    @State var selectedDiff: String = "Tap to Choose"
+    @State var seletedTyp: String = "Tap to Choose"
+
     var body: some View {
         
         VStack {
-            listOfSelection(selectedButtonText1: self.$selectedButtonText1, selectedButtonText2: self.$selectedButtonText2, selectedButtonText3: self.$selectedButtonText3, selectedButtonText4: self.$selectedButtonText4)
+            listOfSelection(amt: self.$selectedAmt, catego: self.$selectedCatego, diff: self.$selectedDiff, typ: self.$seletedTyp)
             SaveButton(tapSave: {
-                networkingManager.fetchResponse()
-                    .sink { completion in
-                        switch completion {
-                        case .finished:
-                            break
-                        case .failure(let error):
-                            print("this is error from combine: \(error)")
-                        }
-                    } receiveValue: { trueOrFalseResponse in
-                        
-                        print("correctAnswer: \(trueOrFalseResponse.results[7].correctAnswer)")
-                        
-                    }
-                    .store(in: &cancellable)
-
+                networkingManager.getPosts(amt: self.selectedAmt, catego: self.selectedCatego, diff: self.selectedDiff, typ: self.seletedTyp)
+                let valueOfCatego = categoriesList.getAssociatedValue( categoryName: self.selectedCatego, difficultyName: self.selectedDiff, typeName: self.seletedTyp)
+                print("This is value of catego \(valueOfCatego)")
             })
                 .padding(.top, 50)
         }
         .padding()
-        
     }
-    
-    func updateText()  {
-       
-    }
-        
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(selectedButtonText1:"Tap to choose" , selectedButtonText2: "Tap to choose", selectedButtonText3: "Tap to choose", selectedButtonText4: "Tap to choose")
+        ContentView()
     }
 }

@@ -38,5 +38,5 @@ struct RoundedGradientButton: View {
 
 #Preview {
     
-    RoundedGradientButton(buttonText: .constant("tap me"), categories: ["Vila", "Junnu"], labelText: "Select Category:")
+    RoundedGradientButton(buttonText: .constant(""), categories: ["Vila", "Junnu"], labelText: "Select Category:")
 }
