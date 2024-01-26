@@ -19,7 +19,15 @@
 		384FBF712B5E375E00284802 /* RoundedGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF702B5E375E00284802 /* RoundedGradientButton.swift */; };
 		384FBF732B5F6DE500284802 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF722B5F6DE500284802 /* SaveButton.swift */; };
 		384FBF752B5F847800284802 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FBF742B5F847800284802 /* Networking.swift */; };
+<<<<<<< HEAD
 		384FBF792B60AA2D00284802 /* MockTrueorFalse.json in Resources */ = {isa = PBXBuildFile; fileRef = 384FBF782B60AA2D00284802 /* MockTrueorFalse.json */; };
+=======
+<<<<<<< Updated upstream
+=======
+		389708B12B6221CF0090E0C2 /* CategoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389708B02B6221CF0090E0C2 /* CategoriesList.swift */; };
+		38F569BB2B61D88B00297B57 /* MockTrueorFalse.json in Resources */ = {isa = PBXBuildFile; fileRef = 384FBF782B60AA2D00284802 /* MockTrueorFalse.json */; };
+>>>>>>> Stashed changes
+>>>>>>> 2ef229b (this commit has a categories list for each button selection and also few func to pass the categories to url link)
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +63,15 @@
 		384FBF702B5E375E00284802 /* RoundedGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedGradientButton.swift; sourceTree = "<group>"; };
 		384FBF722B5F6DE500284802 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		384FBF742B5F847800284802 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		384FBF782B60AA2D00284802 /* MockTrueorFalse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockTrueorFalse.json; sourceTree = "<group>"; };
+=======
+<<<<<<< Updated upstream
+=======
+		384FBF782B60AA2D00284802 /* MockTrueorFalse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockTrueorFalse.json; sourceTree = "<group>"; };
+		389708B02B6221CF0090E0C2 /* CategoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesList.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
+>>>>>>> 2ef229b (this commit has a categories list for each button selection and also few func to pass the categories to url link)
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +163,15 @@
 				384FBF682B5E30E000284802 /* TrueOrFalseModle.swift */,
 				384FBF702B5E375E00284802 /* RoundedGradientButton.swift */,
 				384FBF722B5F6DE500284802 /* SaveButton.swift */,
+<<<<<<< HEAD
 				384FBF782B60AA2D00284802 /* MockTrueorFalse.json */,
+=======
+<<<<<<< Updated upstream
+=======
+				384FBF782B60AA2D00284802 /* MockTrueorFalse.json */,
+				389708B02B6221CF0090E0C2 /* CategoriesList.swift */,
+>>>>>>> Stashed changes
+>>>>>>> 2ef229b (this commit has a categories list for each button selection and also few func to pass the categories to url link)
 			);
 			path = Modle;
 			sourceTree = "<group>";
@@ -273,7 +297,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				384FBF792B60AA2D00284802 /* MockTrueorFalse.json in Resources */,
+=======
+<<<<<<< Updated upstream
+=======
+				38F569BB2B61D88B00297B57 /* MockTrueorFalse.json in Resources */,
+>>>>>>> Stashed changes
+>>>>>>> 2ef229b (this commit has a categories list for each button selection and also few func to pass the categories to url link)
 				384FBF452B5E27DC00284802 /* Preview Assets.xcassets in Resources */,
 				384FBF422B5E27DC00284802 /* Assets.xcassets in Resources */,
 			);
@@ -301,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				384FBF6F2B5E32BA00284802 /* listOfSelection.swift in Sources */,
+				389708B12B6221CF0090E0C2 /* CategoriesList.swift in Sources */,
 				384FBF732B5F6DE500284802 /* SaveButton.swift in Sources */,
 				384FBF712B5E375E00284802 /* RoundedGradientButton.swift in Sources */,
 				384FBF402B5E27D900284802 /* ContentView.swift in Sources */,
