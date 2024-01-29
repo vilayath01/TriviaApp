@@ -5,7 +5,7 @@ struct TrueOrFalseResponse: Codable {
     
     let results: [QuizResult]
 }
-struct QuizResult: Codable, Equatable {
+struct QuizResult: Codable {
     let type: String
     let difficulty: String
     let category: String
