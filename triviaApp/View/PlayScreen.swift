@@ -3,20 +3,13 @@ import SwiftUI
 import Combine
 
 struct PlayScreen: View {
-    @State var showView1: String = "boolean"
-    @State var quizQuestion: String = ""
-    @State var correctAnswer: String = ""
-    @State var incorrectAnswer: [String] = [""]
-    @State var selectedAns: String = ""
-    @State var quizData: [QuizResult] = []
-    @State var currentIndex = 0
-    @State var allQA: [String] = ["loading", "loading", "loading", "loading"]
+    @StateObject var viewModel = ContentViewModel()
     
     var body: some View {
         HStack {
-            CommonLabel(labelText: "Q: \(currentIndex + 1)/\(quizData.count)")
+            CommonLabel(labelText: "Q: \(viewModel.currentIndex + 1)/\(viewModel.quizData.count)")
                 .padding(.trailing, 80)
-            CommonLabel(labelText: "Score: 100")
+            CommonLabel(labelText: "Score: \(viewModel.scoreCount)")
         }
         
         .padding(.top, -120)
@@ -24,26 +17,34 @@ struct PlayScreen: View {
         
         VStack {
             
-            if showView1 == "boolean" {
+            if viewModel.whichScreen == "boolean" {
                 
-                CommonLabel(labelText: quizData[currentIndex].question)
+                CommonLabel(labelText: viewModel.quizData[viewModel.currentIndex].question)
                 
                     .padding(.bottom, 40)
                 
                 HStack {
                     CommonButton(buttonText: " True ", action: {
-                        currentIndex += 1
-                        print("this is current index \(currentIndex)")
-                        if quizData[currentIndex].correctAnswer == "True" {
-                            
+                        
+                        print("this is current index \(viewModel.currentIndex)")
+                        if viewModel.quizData[viewModel.currentIndex].correctAnswer == "True" {
+                            viewModel.getScore()
+                            viewModel.getCurrentIndex()
+                        }else {
+                            print("this is correct Answer \(viewModel.quizData[viewModel.currentIndex].correctAnswer)")
+                            viewModel.getCurrentIndex()
                         }
                     }, buttonInsidePadding: 35)
                     .padding()
                     CommonButton(buttonText: " False ", action: {
-                        currentIndex += 1
+                        
                         print("the answer is correct")
-                        if quizData[currentIndex].correctAnswer == "False" {
-                            
+                        if viewModel.quizData[viewModel.currentIndex].correctAnswer == "False" {
+                            viewModel.getScore()
+                            viewModel.getCurrentIndex()
+                        }else {
+                            print("this is correct Answer \(viewModel.quizData[viewModel.currentIndex].correctAnswer)")
+                            viewModel.getCurrentIndex()
                         }
                     }, buttonInsidePadding: 35)
                 }
@@ -53,84 +54,96 @@ struct PlayScreen: View {
         .padding(.leading, 25)
         .padding(.trailing, 25)
         
-        if showView1 == "multiple" {
+        if viewModel.whichScreen == "multiple" {
             VStack{
                 
-                CommonLabel(labelText: quizData[currentIndex].question)
+                CommonLabel(labelText: viewModel.quizData[viewModel.currentIndex].question)
                     .padding(.leading, 25)
                     .padding(.trailing, 25)
                     .padding(.bottom, 40)
                 
                 VStack {
-                    HStack {
-                        CommonButton(buttonText: self.allQA[0], action: {
-                            currentIndex += 1
-                            updateMCQs()
-                            if quizData[currentIndex].correctAnswer == quizData[currentIndex].correctAnswer {
-                                
+                        CommonButton(buttonText: viewModel.allQA[0], action: {
+                            if viewModel.quizData[viewModel.currentIndex].correctAnswer == viewModel.allQA[0] {
+                                viewModel.getScore()
+                                viewModel.getCurrentIndex()
+                                viewModel.updateMCQs()
                                 print("the answer is correct")
+                            }else {
+                                print("this is correct Answer \(viewModel.quizData[viewModel.currentIndex].correctAnswer)")
+                                viewModel.getCurrentIndex()
+                                viewModel.updateMCQs()
                             }
                             
                         }, buttonInsidePadding: 0)
+                        .padding()
                         
-                        CommonButton(buttonText: self.allQA[1] , action: {
-                            currentIndex += 1
-                            updateMCQs()
-                            if quizData[currentIndex].correctAnswer == quizData[currentIndex].correctAnswer {
-                                
+                        CommonButton(buttonText: viewModel.allQA[1] , action: {
+                            
+                            if viewModel.quizData[viewModel.currentIndex].correctAnswer == viewModel.allQA[1] {
+                                viewModel.getScore()
+                                viewModel.getCurrentIndex()
+                                viewModel.updateMCQs()
                                 print("the answer is correct")
+                            }else {
+                                print("this is correct Answer \(viewModel.quizData[viewModel.currentIndex].correctAnswer)")
+                                viewModel.getCurrentIndex()
+                                viewModel.updateMCQs()
                             }
                             print("Got True printed")
                         }, buttonInsidePadding: 0)
-                        
-                    }
+                    
+                    .onAppear(perform: {
+                        viewModel.updateMCQs()
+                    })
                     .padding()
-                    HStack {
-                        CommonButton(buttonText: self.allQA[2], action: {
-                            currentIndex += 1
-                            updateMCQs()
-                            if quizData[currentIndex].correctAnswer == quizData[currentIndex].correctAnswer {
-                                
+            
+                        CommonButton(buttonText: viewModel.allQA[2], action: {
+                            
+                            if viewModel.quizData[viewModel.currentIndex].correctAnswer == viewModel.allQA[2] {
+                                viewModel.getScore()
+                                viewModel.getCurrentIndex()
+                                viewModel.updateMCQs()
                                 print("the answer is correct")
+                            }else {
+                                print("this is correct Answer \(viewModel.quizData[viewModel.currentIndex].correctAnswer)")
+                                viewModel.getCurrentIndex()
+                                viewModel.updateMCQs()
                             }
                             print("Got True printed")
                         }, buttonInsidePadding: 0)
+                        .padding()
                         
-                        CommonButton(buttonText: self.allQA[3], action: {
-                            currentIndex += 1
-                            updateMCQs()
-                            if quizData[currentIndex].correctAnswer == quizData[currentIndex].correctAnswer {
-                                
+                        CommonButton(buttonText: viewModel.allQA[3], action: {
+                            
+                            
+                            if viewModel.quizData[viewModel.currentIndex].correctAnswer == viewModel.allQA[3] {
+                                viewModel.getScore()
+                                viewModel.getCurrentIndex()
+                                viewModel.updateMCQs()
                                 print("the answer is correct")
+                            }else {
+                                print("this is correct Answer \(viewModel.quizData[viewModel.currentIndex].correctAnswer)")
+                                viewModel.getCurrentIndex()
+                                viewModel.updateMCQs()
                             }
                             print("Got True printed")
                         }, buttonInsidePadding: 0)
-                    }
+                    
                 }
             }
             .padding(.leading, 25)
             .padding(.trailing, 25)
-            .onAppear(perform: {
-                
-                updateMCQs()
-                
-                
-            })
-            
         }
-        
-    }
-    func updateMCQs() {
-        var getAllQA = [quizData[currentIndex].correctAnswer, quizData[currentIndex].inCorrectAnswer[0], quizData[currentIndex].inCorrectAnswer[1], quizData[currentIndex].inCorrectAnswer[2]]
-        var suffeledQA = getAllQA.shuffled()
-        
-        self.allQA = suffeledQA
     }
 }
 
-#Preview {
-    PlayScreen(showView1: "boolean")
-}
 
+struct PlayScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        
+        PlayScreen()
+    }
+}
 
 

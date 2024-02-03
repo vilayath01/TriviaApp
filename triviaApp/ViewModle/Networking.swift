@@ -17,7 +17,8 @@ class NetworkingManager: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    self.passthroughSubject.send(completion: .failure(error as! Never))
+//                    self.passthroughSubject.send(completion: .failure(error as! Never))
+                    print("this is from netwrokingManager error: \(error)")
                 case .finished:
                     break
                 }
@@ -29,3 +30,31 @@ class NetworkingManager: ObservableObject {
             .store(in: &cancellables)
     }
 }
+
+
+
+//class GenericNetworking: ObservableObject {
+//    var cancellables = Set<AnyCancellable>()
+//    var passthroughSubject = PassthroughSubject<Any, Never>()
+//    
+//    func fetchData<T: Decodable>(from url: URL, responseType: T.Type) {
+//        URLSession.shared.dataTaskPublisher(for: url)
+//            .receive(on: DispatchQueue.main)
+//            .map { $0.data }
+//            .decode(type: responseType, decoder: JSONDecoder())
+//            .sink(receiveCompletion: { completion in
+//                switch completion {
+//                case .failure(let error):
+//                    print("Error: \(error)")
+//                case .finished:
+//                    break
+//                }
+//            }, receiveValue: { data in
+//                // Handle received data
+//                print("Received data: \(data)")
+//                self.passthroughSubject.send(data)
+//            })
+//            .store(in: &cancellables)
+//    }
+//}
+
